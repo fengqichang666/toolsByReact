@@ -1,0 +1,31 @@
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt16 {
+    margin-top: 16px;
+}
+
+.padding16 {
+    padding: 16px;
+}
+
+.tl {
+    text-align: left;
+}
+
+.tr {
+    text-align: right;
+}
+
+.tc {
+    text-align: center;
+}
+
+.lh32 {
+    line-height: 32px;
+}
+
+.ml12 {
+    margin-left: 12px;
+}
