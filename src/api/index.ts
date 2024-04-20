@@ -8,3 +8,6 @@ export const getDirectory = () => {
 export const getBrand = () => {
   return get("/api/selectAll");
 };
+export const login = (data:any) => {
+  return post("/api/admin/employee/login", data);
+};

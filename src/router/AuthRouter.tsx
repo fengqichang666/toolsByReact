@@ -16,12 +16,12 @@ const AuthRouter = ({ children, auth }: any) => {
             Navigate('/login')
         }
         if (token && isExist) {
-            if (location.pathname == "/" || location.pathname == "/login") {
-                Navigate("/home");
-            } else {
-                // 如果是其他路由就跳到其他的路由
-                Navigate(location.pathname);
-            }
+            // if (location.pathname == "/" || location.pathname == "/login") {
+            //     Navigate("/layout");
+            // } else {
+            //     // 如果是其他路由就跳到其他的路由
+            //     Navigate(location.pathname);
+            // }
 
         }
     }, [token, location.pathname]);

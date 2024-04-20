@@ -47,6 +47,9 @@ export default function request(config: AxiosRequestConfig) {
         (response: AxiosResponse) => {
             // 这里我们将后台返回的数据解构出来返回，方便后续获取
             const { data } = response;
+            if(data.code !== 1) {
+                return Promise.reject(data);
+            }
             return data;
             // 这里根据其它业务可以做其它特殊的拦截，比如根据后台返回的data有固定的格式，根据后台返回的code可以做一些统一处理，比如像下面这样
             // const { code, message, data } = response.data;
