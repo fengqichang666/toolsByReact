@@ -6,7 +6,7 @@ import request from './index'
  * @param {object} data
  * @param {object} params
  */
-export function post(url: string, data = {}, params = {}) {
+export function post(url: string, data = {}, params = {}): Promise<any> {
     return request({
         method: 'post',
         url,
@@ -19,7 +19,7 @@ export function post(url: string, data = {}, params = {}) {
  * @param {string} url
  * @param {object} params
  */
-export function get(url: string, params = {}) {
+export function get(url: string, params = {}): Promise<any>{
     return request({
         method: 'get',
         url,

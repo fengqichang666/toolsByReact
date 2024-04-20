@@ -19,10 +19,10 @@ export default function request(config: AxiosRequestConfig) {
         // Access-Control-Allow-Credentials: true
         // Access-Control-Allow-Origin: 当前页面的域名
         withCredentials: false,
-      });
+    });
     // 前置拦截器（发起请求之前的拦截）
     instance.interceptors.request.use(
-        (config) => {
+        (config: any) => {
             /**
              * 在这里一般会携带前台的参数发送给后台，比如下面这段代码：
              * const token = getToken()
@@ -32,7 +32,7 @@ export default function request(config: AxiosRequestConfig) {
              */
             return config;
         },
-        (error) => {
+        (error: { message: string; }) => {
             const errorMsg = error?.message || 'Request Error';
             //   ElMessage({
             //     message: errorMsg,
@@ -64,7 +64,7 @@ export default function request(config: AxiosRequestConfig) {
             //   return Promise.reject(new Error(message));
             // }
         },
-        (error) => {
+        (error: { response: any; }) => {
             const { response } = error;
             // 处理 HTTP 网络错误
             let message = '';

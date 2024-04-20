@@ -22,6 +22,8 @@ function getItem(
 }
 
 const items: MenuProps['items'] = [
+	getItem('商品管理', '/product', <UnorderedListOutlined />),
+	{ type: 'divider' },
 	getItem('备忘录', '/memorandum', <UnorderedListOutlined />),
 	{ type: 'divider' },
 	getItem('笔记', '/notes', <FormOutlined />),

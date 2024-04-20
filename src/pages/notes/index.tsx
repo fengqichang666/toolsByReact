@@ -35,7 +35,7 @@ function Notes() {
                             {item.serialNumber}、
                         </Col>
                         <Col span={16}>
-                            <TextArea showCount={{ formatter: ({ count }) => `${count}个字` }} value={item.text} onChange={(e) => changeItem(e, index)}></TextArea>
+                            <TextArea showCount={{ formatter: ({ count }) => `字数:${count}` }} value={item.text} onChange={(e) => changeItem(e, index)}></TextArea>
                         </Col>
                         <Col span={1} className='ml12'>
                             <Button onClick={() => delItem(index)}>删除</Button>

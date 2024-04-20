@@ -14,7 +14,7 @@ const headerStyle: React.CSSProperties = {
 };
 
 const contentStyle: React.CSSProperties = {
-    textAlign: 'center',
+    padding:'18px',
     backgroundColor: '#BEF1EE'
 };
 
