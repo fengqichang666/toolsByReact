@@ -10,7 +10,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     server: {
       host:true,
-      // open: "/layout",
+      open:'/',
       proxy: createProxy(wrapperEnv(env).VITE_PROXY),
     },
     resolve: {

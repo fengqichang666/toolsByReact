@@ -1,4 +1,4 @@
-import React, { ReactElement, lazy } from 'react'
+import React from 'react'
 import { useRoutes } from 'react-router-dom';
 import { Routers } from './RoutesList';
 

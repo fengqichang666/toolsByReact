@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Form, Input, Row, Col, Space, Select, Table, Flex } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Button, Form, Input, Space, Select, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-import { getBrand } from '@/api/index'
+import { getBrand } from '@/api/index';
+
 interface DataType {
     key: React.Key,
     ordered: number,
@@ -11,6 +12,7 @@ interface DataType {
     id: number,
     status: string,
 }
+
 const columns: ColumnsType<DataType> = [
     {
         title: '品牌名称',
@@ -32,7 +34,7 @@ const columns: ColumnsType<DataType> = [
         dataIndex: 'status',
         align: 'center',
         render: (text) => {
-            return text == '0' ? '禁用' : '启用'
+            return text == '0' ? '禁用' : '启用';
         }
     },
     {
@@ -40,23 +42,25 @@ const columns: ColumnsType<DataType> = [
         key: 'operation',
         fixed: 'right', align: 'center',
         width: 150,
-        render: () => { return (<Space><Button danger>删除</Button> <Button type="primary">编辑</Button></Space>) },
-    },
+        render: () => {
+            return (<Space><Button danger>删除</Button> <Button type="primary">编辑</Button></Space>);
+        }
+    }
 ];
 // rowSelection object indicates the need for row selection
 const rowSelection = {
     onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
         console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-    },
+    }
 };
 
 const Product: React.FC = () => {
-    const [data, setData] = useState<DataType[]>([])
+    const [data, setData] = useState<DataType[]>([]);
     useEffect(() => {
         getBrand().then((res) => {
-            setData(res)
-        })
-    }, [])
+            setData(res);
+        });
+    }, []);
     const [form] = Form.useForm();
     const onFinish = (values: any) => {
         console.log('Finish:', values);
@@ -77,7 +81,7 @@ const Product: React.FC = () => {
                             allowClear
                             options={[
                                 { value: '1', label: '启用' },
-                                { value: '0', label: '禁用' },
+                                { value: '0', label: '禁用' }
                             ]}
                         >
                         </Select>
@@ -123,18 +127,18 @@ const Product: React.FC = () => {
                 </Button>
             </Space>
             <Table
-                rowKey='id'
+                rowKey="id"
                 style={{ marginTop: '10px', textAlign: 'center' }}
                 rowSelection={{
                     type: 'checkbox',
-                    ...rowSelection,
+                    ...rowSelection
                 }}
                 columns={columns}
                 dataSource={data}
             >
             </Table>
         </>
-    )
-}
+    );
+};
 
-export default Product
+export default Product;

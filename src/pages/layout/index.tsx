@@ -4,6 +4,7 @@ import { Layout } from 'antd'
 import LeftMenu from '../menu';
 import { Outlet } from 'react-router-dom'
 import Logo from '@/assets/react.svg';
+import Top from '../header';
 const { Header, Footer, Sider, Content } = Layout;
 const headerStyle: React.CSSProperties = {
     textAlign: 'center',
@@ -24,7 +25,7 @@ const siderStyle: React.CSSProperties = {
     height: '100vh',
     backgroundColor: '#2392A2',
 };
-console.log(import.meta);
+console.log('import.meta',import.meta);
 
 export default function BaseLayout() {
     return (
@@ -38,7 +39,9 @@ export default function BaseLayout() {
                     <LeftMenu />
                 </Sider>
                 <Layout>
-                    <Header style={headerStyle}>Header</Header>
+                    <Header style={headerStyle}>
+                        <Top/>
+                    </Header>
                     <Content style={contentStyle}>
                         <Outlet />
                     </Content>

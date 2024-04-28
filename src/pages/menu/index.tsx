@@ -1,5 +1,5 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { CalculatorOutlined, UnorderedListOutlined, FormOutlined, CloudUploadOutlined, LinkOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
@@ -22,7 +22,8 @@ function getItem(
 }
 
 const items: MenuProps['items'] = [
-	getItem('商品管理', '/product', <UnorderedListOutlined />),
+	getItem('员工管理', '/employee', <UnorderedListOutlined />),
+	// getItem('商品管理', '/product', <UnorderedListOutlined />),
 	{ type: 'divider' },
 	getItem('备忘录', '/memorandum', <UnorderedListOutlined />),
 	{ type: 'divider' },
@@ -35,10 +36,12 @@ const items: MenuProps['items'] = [
 	getItem('远程文件', '/remoteFiles', <CloudUploadOutlined />)
 ];
 const LeftMenu: React.FC = () => {
+	const location = useLocation()
+	const currentPath = location.pathname.replace('/layout','')
 	let navigate = useNavigate();
 	const onClick: MenuProps['onClick'] = (e) => {
 		navigate(`/layout${e.key}`)
-		console.log('click ', e);
+		console.log('click ', currentPath);
 	};
 	return (
 		<Menu
@@ -46,7 +49,7 @@ const LeftMenu: React.FC = () => {
 			style={{
 				maxHeight: '100%', backgroundColor: '#2392A2'
 			}}
-			defaultSelectedKeys={['1']}
+			selectedKeys={[currentPath]}
 			defaultOpenKeys={['sub1']}
 			mode="inline"
 			items={items}

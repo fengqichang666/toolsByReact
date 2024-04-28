@@ -1,18 +1,24 @@
-import React from 'react'
 import { Button, Form, type FormProps, Input, Col, Row } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import {login} from '@/api/index';
+import { login } from '@/api/employee';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken } from '@/store/features/user';
 type FieldType = {
     username?: string;
     password?: string;
 };
 
 export default function Login() {
+    const dispatch = useDispatch()
+    const token = useSelector((state: any) => state.user.token)
     const navigate = useNavigate()
-    const onFinish: FormProps<FieldType>["onFinish"] =async (values) => {
+    const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
         console.log('Success:', values);
-        localStorage.setItem('token', '123456')
-        await login(values)
+        const data = await login(values)
+        dispatch(setToken(
+            data.token
+        ))
+        console.log(token)
         navigate('/layout')
     };
 

@@ -1,4 +1,4 @@
-import { Navigate} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Login from '@/pages/login';
 import Memorandum from '@/pages/memorandum';
 import Notes from '@/pages/notes';
@@ -7,23 +7,26 @@ import Calculator from '@/pages/calculator';
 import RemoteFiles from '@/pages/remoteFiles';
 import Home from '@/pages/home';
 import Layout from '@/pages/layout';
-import Product from '@/pages/product';
+import Employee from '@/pages/employee';
+import AddPage from '@/pages/employee/addPage';
+
 export const Routers = [
     {
         path: '/',
-        element: <Navigate to='/layout' />
+        element: <Navigate to="/layout" />
     },
     {
-        path: '/layout',
+        path: 'layout',
         element: <Layout />,
         children: [
             {
                 path: '',
-                element: <Home />,
+                element: <Home />
             },
             {
-                path: 'product',
-                element: <Product />
+                path: 'employee',
+                element: <Employee />
+
             },
             {
                 path: 'memorandum',
@@ -45,11 +48,15 @@ export const Routers = [
                 path: 'remoteFiles',
                 element: <RemoteFiles />
             },
+            {
+                path: 'employee/add',
+                element: <AddPage />
+            }
         ]
     },
     {
         path: '/login',
         element: <Login />
-    },
+    }
 
-]
+];
