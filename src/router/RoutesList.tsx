@@ -9,6 +9,7 @@ import Home from '@/pages/home';
 import Layout from '@/pages/layout';
 import Employee from '@/pages/employee';
 import AddPage from '@/pages/employee/addPage';
+import AMap from '@/aMap/MapContainer'
 
 export const Routers = [
     {
@@ -51,6 +52,10 @@ export const Routers = [
             {
                 path: 'employee/add',
                 element: <AddPage />
+            },
+            {
+                path: 'aMap',
+                element: <AMap />
             }
         ]
     },

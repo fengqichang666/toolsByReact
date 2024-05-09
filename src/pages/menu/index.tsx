@@ -33,7 +33,9 @@ const items: MenuProps['items'] = [
 	{ type: 'divider' },
 	getItem('双11计算器', '/calculator', <CalculatorOutlined />),
 	{ type: 'divider' },
-	getItem('远程文件', '/remoteFiles', <CloudUploadOutlined />)
+	getItem('远程文件', '/remoteFiles', <CloudUploadOutlined />),
+	{ type: 'divider' },
+	getItem('地图', '/aMap', <CloudUploadOutlined />)
 ];
 const LeftMenu: React.FC = () => {
 	const location = useLocation()
