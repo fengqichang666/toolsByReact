@@ -3,9 +3,8 @@ import React from 'react'
 import { Layout } from 'antd'
 import LeftMenu from '../menu';
 import { Outlet } from 'react-router-dom'
-import Logo from '@/assets/react.svg';
 import Top from '../header';
-const { Header, Footer, Sider, Content } = Layout;
+const { Header,  Sider, Content } = Layout;
 const headerStyle: React.CSSProperties = {
     textAlign: 'center',
     color: '#fff',

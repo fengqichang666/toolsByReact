@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './MapContainer.css';
+import styles from './MapContainer.css?inline';
 import AMapLoader from '@amap/amap-jsapi-loader';
 
 export default function MapContainer() {
@@ -18,7 +18,7 @@ export default function MapContainer() {
             if (status == 'complete') {
                 onComplete(result);
             } else {
-                onError(result);
+                onError();
             }
         });
 
@@ -29,7 +29,7 @@ export default function MapContainer() {
         setLocation([data.position.lng, data.position.lat]);
     }
 
-    function onError(data) {
+    function onError() {
         // 定位出错
     }
 
@@ -165,7 +165,7 @@ export default function MapContainer() {
                     if (status == 'complete') {
                         getWeather(AMap, map, res.regeocode.addressComponent.city || res.regeocode.addressComponent.province);
                     } else {
-                        onError(res);
+                        onError();
                     }
                 });
             });

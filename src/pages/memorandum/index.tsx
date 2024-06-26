@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { Col, Row, Input, Button } from 'antd';
 import { Data } from './index.model'
 function Memorandum() {
@@ -17,9 +17,7 @@ function Memorandum() {
         let newData = data.slice();
         setData(newData)
     }
-    const getList = () => {
-        console.log(data)
-    }
+
     return (
         <>
             <Row className="mt16">

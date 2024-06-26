@@ -18,10 +18,10 @@ const AuthRouter = ({ children }: any) => {
     //     return item.pathname == location.pathname;
     // });
     useEffect(() => {
-        if (token == '' && !unAuthRouter.includes(location.pathname)) {
-            alert('token 失效，请重新登录');
-            Navigate('/login');
-        }
+        // if (token == '' && !unAuthRouter.includes(location.pathname)) {
+        //     alert('token 失效，请重新登录');
+        //     Navigate('/login');
+        // }
         // if (token && !isExist) {
         // if (location.pathname == '/' || location.pathname == '/login') {
         // Navigate('/404');

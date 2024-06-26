@@ -1,5 +1,3 @@
-import { Button } from 'antd'
-import React from 'react'
 import {getDirectory} from '@/api/index'
 function RemoteFiles() {
     // const getData = async ()=>{
@@ -13,4 +11,4 @@ function RemoteFiles() {
     )
 }
 
-export default RemoteFiles
+export default RemoteFiles 

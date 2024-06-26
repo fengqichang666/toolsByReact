@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react'
+import  { ChangeEvent, useState } from 'react'
 import { Col, Row, Input, Button } from 'antd';
 const { TextArea } = Input;
 import { Data } from './index.model'
@@ -18,9 +18,7 @@ function Notes() {
         let newData = data.slice();
         setData(newData)
     }
-    const getList = () => {
-        console.log(data)
-    }
+
     return (
         <>
             <Row className="mt16">
